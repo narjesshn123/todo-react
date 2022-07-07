@@ -7,16 +7,15 @@ setItem(item.filter(oldId=>oldId.id!==ite.id))
 const handleComplete = () =>{
   setItem(item.map(todo=>{
     if(todo.id === ite.id){
-      return{...todo, complete: !todo.complete}
+      return{
+        ...todo, completed: !todo.completed}
     }
-    else{
       return todo
-    }
   }))
 }
   return (
     <div className='todo'>
-      <li className={`todo-item ${ite.complete ? "completed":""}`}>{ite.tittle}</li>
+      <li className={`todo-item ${ite.completed ? "completed":""}`}>{ite.tittle}</li>
         <button onClick={handleComplete} className='complete-btn'>
           <i className='fas fa-check'></i>
         </button>
